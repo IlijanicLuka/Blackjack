@@ -78,7 +78,7 @@ class Dealer{
         return card;
     }
 
-    void action(){
+    void play(){
         if(sum(cards) >= 17){
             cout << "Dealer cards: ";
             show_cards(cards);
@@ -109,7 +109,7 @@ class Player{
         bet = x;
     }
 
-    void action(Dealer& dealer){
+    void play(Dealer& dealer){
         string choose;
 
         while(true){
@@ -251,7 +251,7 @@ int main() {
 
     cout << "\n---------- Game start ----------" << endl;
 
-    player1.action(dealer1);
+    player1.play(dealer1);
 
     if(more_than_21(player1.cards)){
         cout << "\nYou have too many points.\n---------- Dealer won! ----------\n";
@@ -263,7 +263,7 @@ int main() {
         exit(0);
     }
 
-    dealer1.action();
+    dealer1.play();
 
     if(more_than_21(dealer1.cards)){
         cout << "\nDealer has too many points.\n---------- You won! ----------\n";
